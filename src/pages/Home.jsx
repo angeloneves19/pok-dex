@@ -17,7 +17,7 @@ export const Home = ({ setPokemonData }) => {
 
   const getPokemons = () => {
     var endpoints = [];
-    for (var i = 1; i < 200; i++) {
+    for (var i = 1; i < 205; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
     axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((response) => setPokemons(response));
@@ -33,7 +33,6 @@ export const Home = ({ setPokemonData }) => {
         filteredPokemons.push(pokemons[i]);
       }
     }
-
     setPokemons(filteredPokemons);
   };
 
