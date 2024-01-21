@@ -12,7 +12,7 @@ export const Profile = ({ pokemonData }) => {
 if(!pokemonData){
  navigate("/")
 }
-  }, []);
+  }, [navigate, pokemonData]);
 
 if(!pokemonData){
     return null;
