@@ -22,7 +22,7 @@ npm start
 Agora você está pronto para explorar a Pokedex! 🎉
 
 Inspirado por Leo Ujo 🌟
-Este projeto foi inspirado por um tutorial incrível do Leo Ujo. Segui o passo a passo guiado no vídeo [Parte 1](https://www.youtube.com/watch?v=dqMae44pEVk&t=297s) e [Parte 2](https://www.youtube.com/watch?v=rPxVihDkFXQ&t=671s) para me aperfeiçoar em APIs e manipulação de dados em React. Agradeço ao Leo Ujo pela excelente explicação e por compartilhar seu conhecimento!
+Este projeto foi inspirado por um tutorial incrível do Leo Ujo. Segui o passo a passo guiado no vídeo [Parte 1](https://youtu.be/dqMae44pEVk) e [Parte 2](https://youtu.be/rPxVihDkFXQ) para me aperfeiçoar em APIs e manipulação de dados em React. Agradeço ao Leo Ujo pela excelente explicação e por compartilhar seu conhecimento!
 
 Funcionalidades 🌟
 Lista de Pokémon: Explore uma lista com 107 Pokémon diferentes, com suas informações básicas.
