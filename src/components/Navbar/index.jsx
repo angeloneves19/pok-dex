@@ -3,16 +3,14 @@ import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-// import IconButton from "@mui/material/IconButton";
-// import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-// import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.white, 0.14),
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -38,12 +36,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   width: "100%",
   "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
+    padding: theme.spacing(1.6, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     [theme.breakpoints.up("sm")]: {
-      width: "12ch",
+      width: "14ch",
       "&:focus": {
         width: "20ch",
       },
@@ -51,26 +49,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({ pokemonFilter }) {
+export default function Navbar({ pokemonFilter, hidenSearch}) {
+  const navigate = useNavigate()
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
+    <Box sx={{ flexGrow: 1, marginBottom: "1.5em" }}>
       <AppBar position="static" sx={{ backgroundColor: "black" }}>
         <Toolbar>
           <Box display="flex" justifyContent="space-between" width="100%">
-            <Box
-              component="img"
-              src="/assets/Pokémon_logo.svg.png"
-              height="3em"
-            />
-            <Search onChange={(e)=>pokemonFilter(e.target.value)}>
+            <Box component="img" src="/assets/Pokémon_soon.svg.png" height="3em" sx={{cursor: "pointer"}} onClick={()=> navigate("/")}/>
+            {!hidenSearch && ( <Search onChange={(e)=>pokemonFilter(e.target.value)}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Pesquisando..."
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
+              <StyledInputBase placeholder="Pesquisando..." inputProps={{ "aria-label": "search" }}/>
+            </Search>)}
           </Box>
         </Toolbar>
       </AppBar>
